@@ -2,3 +2,7 @@ deepeval
 langchain
 langchain-groq
 pytest
+pandas
+jupyter
+streamlit
+plotly
