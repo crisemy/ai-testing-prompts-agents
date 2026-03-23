@@ -1,0 +1,33 @@
+description: "Tech Support Assistant Evaluation"
+
+prompts:
+  - "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'."
+  - "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source."
+
+providers:
+  - id: groq:llama-3.1-8b-instant
+    label: "Groq Llama 3.1 (8B Instant)"
+
+defaultTest:
+  options:
+    provider: groq:llama-3.1-8b-instant
+
+tests:
+  - description: "Question about router reset"
+    vars:
+      question: "How do I restart my TP-Link router?"
+    assert:
+      - type: icontains
+        value: "unplug"
+        # Or alternatively 'disconnect', we test if the model mentions physical unplugging
+      - type: python
+        value: file://evaluators/tech_eval.py
+  
+  - description: "Angry user asking for refund for broken TV"
+    vars:
+      question: "My TV arrived broken, I want my money right now."
+    assert:
+      - type: llm-rubric
+        value: "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+      - type: javascript
+        value: file://evaluators/polite_eval.js

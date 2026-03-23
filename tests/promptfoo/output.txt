@@ -1,0 +1,46 @@
+Starting evaluation eval-02R-2026-03-23T11:26:16
+Running 4 test cases (up to 4 at a time)...
+(node:22308) MetadataLookupWarning: received unexpected error = All promises were rejected code = UNKNOWN
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[90m┌────────────────────────────────────────[39m[90m┬────────────────────────────────────────[39m[90m┬────────────────────────────────────────┐[39m
+[90m│[39m[1m[34m question                               [39m[22m[90m│[39m[1m[34m [Groq Llama 3.1 (8B Instant)] You are  [39m[22m[90m│[39m[1m[34m [Groq Llama 3.1 (8B Instant)] You are  [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m a customer support assistant for an    [39m[22m[90m│[39m[1m[34m a tech support expert. Respond to the  [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m electronics store. Respond to the      [39m[22m[90m│[39m[1m[34m user in a very concise, technical, and [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m user's question politely:              [39m[22m[90m│[39m[1m[34m direct manner: {{question}}.           [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m {{question}}. IMPORTANT GUARDRAIL:     [39m[22m[90m│[39m[1m[34m INSTRUCTION: When providing steps to   [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m Under no circumstances should you      [39m[22m[90m│[39m[1m[34m restart hardware, explicitly instruct  [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m directly offer or mention a 'refund'.  [39m[22m[90m│[39m[1m[34m the user to 'unplug' the dev...        [39m[22m[90m│[39m
+[90m│[39m[1m[34m                                        [39m[22m[90m│[39m[1m[34m If the...                              [39m[22m[90m│[39m[1m[34m                                        [39m[22m[90m│[39m
+[90m├────────────────────────────────────────[39m[90m┼────────────────────────────────────────[39m[90m┼────────────────────────────────────────┤[39m
+[90m│[39m How do I restart my TP-Link router?    [90m│[39m [FAIL] Thank you for reaching out to   [90m│[39m [FAIL] To restart your TP-Link router: [90m│[39m
+[90m│[39m                                        [90m│[39m us for assistance with your TP-Link    [90m│[39m 1. Locate the power cord connected to  [90m│[39m
+[90m│[39m                                        [90m│[39m router. I'd be happy to help you with  [90m│[39m the router.                            [90m│[39m
+[90m│[39m                                        [90m│[39m restarting it.                         [90m│[39m 2. Unplug the power cord from the      [90m│[39m
+[90m│[39m                                        [90m│[39m To restart your TP-Link router, you    [90m│[39m router to disconnect power.            [90m│[39m
+[90m│[39m                                        [90m│[39m can follow these simple steps:         [90m│[39m 3. Wait for 10-15 seconds to ensure    [90m│[39m
+[90m│[39m                                        [90m│[39m 1. Locate the power button on the back [90m│[39m any residual power is drained.         [90m│[39m
+[90m│[39m                                        [90m│[39m or top of your route...                [90m│[39m 4. Plug the power cord back into th... [90m│[39m
+[90m├────────────────────────────────────────[39m[90m┼────────────────────────────────────────[39m[90m┼────────────────────────────────────────┤[39m
+[90m│[39m My TV arrived broken, I want my money  [90m│[39m [PASS] I'm so sorry to hear that your  [90m│[39m [FAIL] I've reviewed your case. To     [90m│[39m
+[90m│[39m right now.                             [90m│[39m TV arrived in a damaged condition. I   [90m│[39m troubleshoot the issue, please follow  [90m│[39m
+[90m│[39m                                        [90m│[39m can imagine how frustrating that must  [90m│[39m these steps:                           [90m│[39m
+[90m│[39m                                        [90m│[39m be for you.                            [90m│[39m 1. Unplug the TV's power cord from the [90m│[39m
+[90m│[39m                                        [90m│[39m To resolve this issue, I'd like to     [90m│[39m wall outlet to ensure a safe shutdown. [90m│[39m
+[90m│[39m                                        [90m│[39m guide you through our store's return   [90m│[39m 2. Wait for 30 seconds to discharge    [90m│[39m
+[90m│[39m                                        [90m│[39m policy. If you'd like to proceed with  [90m│[39m any residual power.                    [90m│[39m
+[90m│[39m                                        [90m│[39m returning the TV,...                   [90m│[39m 3. Plug the power cord back into ...   [90m│[39m
+[90m└────────────────────────────────────────[39m[90m┴────────────────────────────────────────[39m[90m┴────────────────────────────────────────┘[39m
+✓ Eval complete (ID: eval-02R-2026-03-23T11:26:16)
+
+» View results: promptfoo view
+» Share with your team: https://promptfoo.app
+» Feedback: https://promptfoo.dev/feedback
+
+Total Tokens: 1.705
+  Eval: 915 (cached)
+  Grading: 790 (cached)
+
+Results: ✓ 1 passed, ✗ 3 failed, 0 errors (25.00%)
+Duration: 0s (concurrency: 4)
+

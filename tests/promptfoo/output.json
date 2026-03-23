@@ -1,0 +1,828 @@
+{
+  "evalId": "eval-XGn-2026-03-23T11:26:50",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-03-23T11:26:50.709Z",
+    "prompts": [
+      {
+        "id": "99b6c1b1bd7cb7a1cc5985bb51fda8891c5d5560c9dfa3bfb6d1574618535c3e",
+        "raw": "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+        "label": "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+        "provider": "Groq Llama 3.1 (8B Instant)",
+        "metrics": {
+          "score": 1.5,
+          "testPassCount": 1,
+          "testFailCount": 1,
+          "testErrorCount": 0,
+          "assertPassCount": 3,
+          "assertFailCount": 1,
+          "totalLatencyMs": 1209,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 503,
+            "total": 503,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 383,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 383,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      },
+      {
+        "id": "c98bc7af01d6aeefc300635c1cb36e0e0cbc6dee869bd5f7d766f0415e0e05f3",
+        "raw": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+        "label": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+        "provider": "Groq Llama 3.1 (8B Instant)",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 0,
+          "testFailCount": 2,
+          "testErrorCount": 0,
+          "assertPassCount": 2,
+          "assertFailCount": 2,
+          "totalLatencyMs": 1093,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 412,
+            "total": 412,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 407,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 407,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "error": "Response is too long (152 words). It should be more concise.",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Response is too long (152 words). It should be more concise.",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains",
+                "value": "unplug"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Response is too long (152 words). It should be more concise.",
+              "assertion": {
+                "type": "python",
+                "value": "file://evaluators/tech_eval.py"
+              }
+            }
+          ]
+        },
+        "id": "4769d2ab-5fe8-4b37-b972-3f40c302aef1",
+        "latencyMs": 616,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a customer support assistant for an electronics store. Respond to the user's question politely: How do I restart my TP-Link router?. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+          "label": "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+          "config": {
+            "provider": "groq:llama-3.1-8b-instant"
+          }
+        },
+        "promptId": "99b6c1b1bd7cb7a1cc5985bb51fda8891c5d5560c9dfa3bfb6d1574618535c3e",
+        "promptIdx": 0,
+        "provider": {
+          "id": "groq:llama-3.1-8b-instant",
+          "label": "Groq Llama 3.1 (8B Instant)"
+        },
+        "response": {
+          "output": "Thank you for reaching out to us for assistance with your TP-Link router. I'd be happy to help you with restarting it.\n\nTo restart your TP-Link router, you can follow these simple steps:\n\n1. Locate the power button on the back or top of your router. It's usually a small button that says 'Power' or has a power symbol on it.\n2. Press and hold the power button for about 10 seconds to turn off the router.\n3. Wait for about 30 seconds to allow any residual power to drain from the device.\n4. Press the power button again to turn the router back on.\n\nAlternatively, you can also restart your router by unplugging it from the power outlet, waiting for 30 seconds, and then plugging it back in.\n\nIf you're still experiencing issues with your router after restarting it, please let me know and I'll be happy to assist you further.",
+          "tokenUsage": {
+            "cached": 291,
+            "total": 291
+          },
+          "cached": true,
+          "latencyMs": 616,
+          "finishReason": "stop",
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9dffda69fb302569-EZE",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+                "server": "cloudflare",
+                "set-cookie": "__cf_bm=aoNWCBsZe1CJKYctlAj3q7dnMUjImIaHAELasboIx3Q-1774126480.9519966-1.0.1.1-AsJ.4d8kCp0Z7r0hzMRKZ4TxeM_eEyvJpEeIG9y01XnySSKE2RJ13TwAB_UZZVeXPZO4eTB1QiqJlPTIfGY5SaLu_TJkq_a5SwV6z3Xn_UHim_v8dYHawfNFoVT1ZYjo; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+                "strict-transport-security": "max-age=15552000",
+                "transfer-encoding": "chunked",
+                "vary": "Origin",
+                "via": "1.1 google",
+                "x-groq-region": "bra",
+                "x-ratelimit-limit-requests": "14400",
+                "x-ratelimit-limit-tokens": "6000",
+                "x-ratelimit-remaining-requests": "14399",
+                "x-ratelimit-remaining-tokens": "5895",
+                "x-ratelimit-reset-requests": "6s",
+                "x-ratelimit-reset-tokens": "1.05s",
+                "x-request-id": "req_01km92vfjef8r81cpajmaxqgmg"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "Question about router reset",
+          "vars": {
+            "question": "How do I restart my TP-Link router?"
+          },
+          "assert": [
+            {
+              "type": "icontains",
+              "value": "unplug"
+            },
+            {
+              "type": "python",
+              "value": "file://evaluators/tech_eval.py"
+            }
+          ],
+          "options": {
+            "provider": "groq:llama-3.1-8b-instant"
+          },
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "question": "How do I restart my TP-Link router?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9dffda69fb302569-EZE",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+              "server": "cloudflare",
+              "set-cookie": "__cf_bm=aoNWCBsZe1CJKYctlAj3q7dnMUjImIaHAELasboIx3Q-1774126480.9519966-1.0.1.1-AsJ.4d8kCp0Z7r0hzMRKZ4TxeM_eEyvJpEeIG9y01XnySSKE2RJ13TwAB_UZZVeXPZO4eTB1QiqJlPTIfGY5SaLu_TJkq_a5SwV6z3Xn_UHim_v8dYHawfNFoVT1ZYjo; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+              "strict-transport-security": "max-age=15552000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin",
+              "via": "1.1 google",
+              "x-groq-region": "bra",
+              "x-ratelimit-limit-requests": "14400",
+              "x-ratelimit-limit-tokens": "6000",
+              "x-ratelimit-remaining-requests": "14399",
+              "x-ratelimit-remaining-tokens": "5895",
+              "x-ratelimit-reset-requests": "6s",
+              "x-ratelimit-reset-tokens": "1.05s",
+              "x-request-id": "req_01km92vfjef8r81cpajmaxqgmg"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "Response is too long (66 words). It should be more concise.",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Response is too long (66 words). It should be more concise.",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains",
+                "value": "unplug"
+              }
+            },
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Response is too long (66 words). It should be more concise.",
+              "assertion": {
+                "type": "python",
+                "value": "file://evaluators/tech_eval.py"
+              }
+            }
+          ]
+        },
+        "id": "529f7982-4c09-48e8-8bda-052472fc7c10",
+        "latencyMs": 532,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: How do I restart my TP-Link router?. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+          "label": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+          "config": {
+            "provider": "groq:llama-3.1-8b-instant"
+          }
+        },
+        "promptId": "c98bc7af01d6aeefc300635c1cb36e0e0cbc6dee869bd5f7d766f0415e0e05f3",
+        "promptIdx": 1,
+        "provider": {
+          "id": "groq:llama-3.1-8b-instant",
+          "label": "Groq Llama 3.1 (8B Instant)"
+        },
+        "response": {
+          "output": "To restart your TP-Link router:\n\n1. Locate the power cord connected to the router.\n2. Unplug the power cord from the router to disconnect power.\n3. Wait for 10-15 seconds to ensure any residual power is drained.\n4. Plug the power cord back into the router.\n5. Wait for the router to boot up and the lights to stabilize.\n6. Your TP-Link router is now restarted.",
+          "tokenUsage": {
+            "cached": 180,
+            "total": 180
+          },
+          "cached": true,
+          "latencyMs": 532,
+          "finishReason": "stop",
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9dffda69ffaec6eb-EZE",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+                "server": "cloudflare",
+                "set-cookie": "__cf_bm=uyB9C6K77NRuZ7FSuR0WlzLzKkn4_hTOLehBdpA_4x8-1774126480.9590876-1.0.1.1-kVEta7C91zr7ki6U5pXw_Ud5HbouOD0.Mkxze02exr2mx_T2VlIgXMDYI7nrMT7Ac3aRZOqofadN6S_DyRAABRQWg0FLAdSJBMnMavMDxOs961ACyBsUI6j84CI66Pd0; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+                "strict-transport-security": "max-age=15552000",
+                "transfer-encoding": "chunked",
+                "vary": "Origin",
+                "via": "1.1 google",
+                "x-groq-region": "bra",
+                "x-ratelimit-limit-requests": "14400",
+                "x-ratelimit-limit-tokens": "6000",
+                "x-ratelimit-remaining-requests": "14399",
+                "x-ratelimit-remaining-tokens": "5803",
+                "x-ratelimit-reset-requests": "6s",
+                "x-ratelimit-reset-tokens": "1.97s",
+                "x-request-id": "req_01km92vfjmf8rack2jnx3hjmcq"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "Question about router reset",
+          "vars": {
+            "question": "How do I restart my TP-Link router?"
+          },
+          "assert": [
+            {
+              "type": "icontains",
+              "value": "unplug"
+            },
+            {
+              "type": "python",
+              "value": "file://evaluators/tech_eval.py"
+            }
+          ],
+          "options": {
+            "provider": "groq:llama-3.1-8b-instant"
+          },
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "question": "How do I restart my TP-Link router?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9dffda69ffaec6eb-EZE",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+              "server": "cloudflare",
+              "set-cookie": "__cf_bm=uyB9C6K77NRuZ7FSuR0WlzLzKkn4_hTOLehBdpA_4x8-1774126480.9590876-1.0.1.1-kVEta7C91zr7ki6U5pXw_Ud5HbouOD0.Mkxze02exr2mx_T2VlIgXMDYI7nrMT7Ac3aRZOqofadN6S_DyRAABRQWg0FLAdSJBMnMavMDxOs961ACyBsUI6j84CI66Pd0; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+              "strict-transport-security": "max-age=15552000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin",
+              "via": "1.1 google",
+              "x-groq-region": "bra",
+              "x-ratelimit-limit-requests": "14400",
+              "x-ratelimit-limit-tokens": "6000",
+              "x-ratelimit-remaining-requests": "14399",
+              "x-ratelimit-remaining-tokens": "5803",
+              "x-ratelimit-reset-requests": "6s",
+              "x-ratelimit-reset-tokens": "1.97s",
+              "x-request-id": "req_01km92vfjmf8rack2jnx3hjmcq"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "error": "the response refers the user to the store's return policy",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "the response refers the user to the store's return policy",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 407,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 407,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+              },
+              "pass": false,
+              "score": 0,
+              "reason": "the response refers the user to the store's return policy",
+              "tokensUsed": {
+                "total": 407,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 407,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nI've reviewed your case. To troubleshoot the issue, please follow these steps:\\n\\n1. Unplug the TV's power cord from the wall outlet to ensure a safe shutdown.\\n2. Wait for 30 seconds to discharge any residual power.\\n3. Plug the power cord back into the wall outlet.\\n4. Press and hold the TV's power button for 30 seconds to discharge any remaining power.\\n5. Release the power button and plug the power cord back into the wall outlet.\\n6. Attempt to turn on the TV and check if the issue persists.\\n\\nIf the issue remains unresolved, please provide the TV's serial number and a detailed description of the problem for further assistance.\\n</Output>\\n<Rubric>\\nThe response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV.\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Maintained a polite/helpful tone (found 1 related words)."
+            }
+          ]
+        },
+        "id": "6f4b791f-f2b6-4bfb-84cf-2d4f75edfbc7",
+        "latencyMs": 561,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: My TV arrived broken, I want my money right now.. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+          "label": "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source.",
+          "config": {
+            "provider": "groq:llama-3.1-8b-instant"
+          }
+        },
+        "promptId": "c98bc7af01d6aeefc300635c1cb36e0e0cbc6dee869bd5f7d766f0415e0e05f3",
+        "promptIdx": 1,
+        "provider": {
+          "id": "groq:llama-3.1-8b-instant",
+          "label": "Groq Llama 3.1 (8B Instant)"
+        },
+        "response": {
+          "output": "I've reviewed your case. To troubleshoot the issue, please follow these steps:\n\n1. Unplug the TV's power cord from the wall outlet to ensure a safe shutdown.\n2. Wait for 30 seconds to discharge any residual power.\n3. Plug the power cord back into the wall outlet.\n4. Press and hold the TV's power button for 30 seconds to discharge any remaining power.\n5. Release the power button and plug the power cord back into the wall outlet.\n6. Attempt to turn on the TV and check if the issue persists.\n\nIf the issue remains unresolved, please provide the TV's serial number and a detailed description of the problem for further assistance.",
+          "tokenUsage": {
+            "cached": 232,
+            "total": 232
+          },
+          "cached": true,
+          "latencyMs": 561,
+          "finishReason": "stop",
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9dffda69ec749c0e-EZE",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+                "server": "cloudflare",
+                "set-cookie": "__cf_bm=OYqjFSZx63h8cyEFXvLof3IuhDmTJrLvZpfhzDp9icM-1774126480.9440994-1.0.1.1-XxbY5TAaXcpBITZTldLBnPAgUbMxnbaDDW8.wA1yOXH0SclihUn0E8wkkKDThoJWJK2oFgTw9VKXZvPTv4ZhBQOQKrB5wbnIdb.IxY85.ZqendwQl6d4ycdQw.n2APt2; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+                "strict-transport-security": "max-age=15552000",
+                "transfer-encoding": "chunked",
+                "vary": "Origin",
+                "via": "1.1 google",
+                "x-groq-region": "bra",
+                "x-ratelimit-limit-requests": "14400",
+                "x-ratelimit-limit-tokens": "6000",
+                "x-ratelimit-remaining-requests": "14397",
+                "x-ratelimit-remaining-tokens": "5709",
+                "x-ratelimit-reset-requests": "18s",
+                "x-ratelimit-reset-tokens": "2.91s",
+                "x-request-id": "req_01km92vfjaey3anh80raqw4zx6"
+              }
+            }
+          }
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "Angry user asking for refund for broken TV",
+          "vars": {
+            "question": "My TV arrived broken, I want my money right now."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+            },
+            {
+              "type": "javascript",
+              "value": "file://evaluators/polite_eval.js"
+            }
+          ],
+          "options": {
+            "provider": "groq:llama-3.1-8b-instant"
+          },
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "question": "My TV arrived broken, I want my money right now."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9dffda69ec749c0e-EZE",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+              "server": "cloudflare",
+              "set-cookie": "__cf_bm=OYqjFSZx63h8cyEFXvLof3IuhDmTJrLvZpfhzDp9icM-1774126480.9440994-1.0.1.1-XxbY5TAaXcpBITZTldLBnPAgUbMxnbaDDW8.wA1yOXH0SclihUn0E8wkkKDThoJWJK2oFgTw9VKXZvPTv4ZhBQOQKrB5wbnIdb.IxY85.ZqendwQl6d4ycdQw.n2APt2; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+              "strict-transport-security": "max-age=15552000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin",
+              "via": "1.1 google",
+              "x-groq-region": "bra",
+              "x-ratelimit-limit-requests": "14400",
+              "x-ratelimit-limit-tokens": "6000",
+              "x-ratelimit-remaining-requests": "14397",
+              "x-ratelimit-remaining-tokens": "5709",
+              "x-ratelimit-reset-requests": "18s",
+              "x-ratelimit-reset-tokens": "2.91s",
+              "x-request-id": "req_01km92vfjaey3anh80raqw4zx6"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 383,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 383,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "assertion": {
+                "type": "llm-rubric",
+                "value": "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+              },
+              "pass": true,
+              "score": 1,
+              "reason": "The response refers the user to the store's return policy, which is allowed by the rubric.",
+              "tokensUsed": {
+                "total": 383,
+                "prompt": 0,
+                "completion": 0,
+                "cached": 383,
+                "numRequests": 0,
+                "completionDetails": {
+                  "reasoning": 0,
+                  "acceptedPrediction": 0,
+                  "rejectedPrediction": 0
+                }
+              },
+              "metadata": {
+                "renderedGradingPrompt": "[{\"role\":\"system\",\"content\":\"You are grading output according to a user-specified rubric. If the statement in the rubric is true, then the output passes the test. You respond with a JSON object with this structure: {reason: string, pass: boolean, score: number}\\n\\nExamples:\\n\\n<Output>Hello world</Output>\\n<Rubric>Content contains a greeting</Rubric>\\n{\\\"reason\\\": \\\"the content contains the word 'Hello'\\\", \\\"pass\\\": true, \\\"score\\\": 1.0}\\n\\n<Output>Avast ye swabs, repel the invaders!</Output>\\n<Rubric>Does not speak like a pirate</Rubric>\\n{\\\"reason\\\": \\\"'avast ye' is a common pirate term\\\", \\\"pass\\\": false, \\\"score\\\": 0.0}\"},{\"role\":\"user\",\"content\":\"<Output>\\nI'm so sorry to hear that your TV arrived in a damaged condition. I can imagine how frustrating that must be for you. \\n\\nTo resolve this issue, I'd like to guide you through our store's return policy. If you'd like to proceed with returning the TV, we can discuss the next steps and any necessary documentation. \\n\\nCould you please provide me with your order number and a brief description of the damage you've observed? This will help me to assist you further and ensure that we follow the correct procedures.\\n</Output>\\n<Rubric>\\nThe response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV.\\n</Rubric>\"}]"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Maintained a polite/helpful tone (found 5 related words)."
+            }
+          ]
+        },
+        "id": "a48088bb-1b1c-407d-9ff0-0c48c4cfb6a0",
+        "latencyMs": 593,
+        "namedScores": {},
+        "prompt": {
+          "raw": "You are a customer support assistant for an electronics store. Respond to the user's question politely: My TV arrived broken, I want my money right now.. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+          "label": "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+          "config": {
+            "provider": "groq:llama-3.1-8b-instant"
+          }
+        },
+        "promptId": "99b6c1b1bd7cb7a1cc5985bb51fda8891c5d5560c9dfa3bfb6d1574618535c3e",
+        "promptIdx": 0,
+        "provider": {
+          "id": "groq:llama-3.1-8b-instant",
+          "label": "Groq Llama 3.1 (8B Instant)"
+        },
+        "response": {
+          "output": "I'm so sorry to hear that your TV arrived in a damaged condition. I can imagine how frustrating that must be for you. \n\nTo resolve this issue, I'd like to guide you through our store's return policy. If you'd like to proceed with returning the TV, we can discuss the next steps and any necessary documentation. \n\nCould you please provide me with your order number and a brief description of the damage you've observed? This will help me to assist you further and ensure that we follow the correct procedures.",
+          "tokenUsage": {
+            "cached": 212,
+            "total": 212
+          },
+          "cached": true,
+          "latencyMs": 593,
+          "finishReason": "stop",
+          "guardrails": {
+            "flagged": false
+          },
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "alt-svc": "h3=\":443\"; ma=86400",
+                "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+                "cf-cache-status": "DYNAMIC",
+                "cf-ray": "9dffda69f867ca16-EZE",
+                "connection": "keep-alive",
+                "content-encoding": "br",
+                "content-type": "application/json",
+                "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+                "server": "cloudflare",
+                "set-cookie": "__cf_bm=XhWe_vLHfBWhQ2znkNjT8Tjk_tU3q.acmXJSF4g_sM8-1774126480.961079-1.0.1.1-Mt579e.IbIB4mWTmTGoXudEF4zKnck41aBa5pFmeQtNcMMsLdzBqKQm4cME1rsm_T5wRPE3MGPXETZXIwu0yrvAbU4FmLGyHuYH.Et45wPaAI8IVB.tK4GOxjC7ZZZr.; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+                "strict-transport-security": "max-age=15552000",
+                "transfer-encoding": "chunked",
+                "vary": "Origin",
+                "via": "1.1 google",
+                "x-groq-region": "bra",
+                "x-ratelimit-limit-requests": "14400",
+                "x-ratelimit-limit-tokens": "6000",
+                "x-ratelimit-remaining-requests": "14396",
+                "x-ratelimit-remaining-tokens": "5603",
+                "x-ratelimit-reset-requests": "24s",
+                "x-ratelimit-reset-tokens": "3.969s",
+                "x-request-id": "req_01km92vfjpfgz8ggwswmgasbs5"
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "Angry user asking for refund for broken TV",
+          "vars": {
+            "question": "My TV arrived broken, I want my money right now."
+          },
+          "assert": [
+            {
+              "type": "llm-rubric",
+              "value": "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+            },
+            {
+              "type": "javascript",
+              "value": "file://evaluators/polite_eval.js"
+            }
+          ],
+          "options": {
+            "provider": "groq:llama-3.1-8b-instant"
+          },
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "question": "My TV arrived broken, I want my money right now."
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "alt-svc": "h3=\":443\"; ma=86400",
+              "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+              "cf-cache-status": "DYNAMIC",
+              "cf-ray": "9dffda69f867ca16-EZE",
+              "connection": "keep-alive",
+              "content-encoding": "br",
+              "content-type": "application/json",
+              "date": "Sat, 21 Mar 2026 20:54:41 GMT",
+              "server": "cloudflare",
+              "set-cookie": "__cf_bm=XhWe_vLHfBWhQ2znkNjT8Tjk_tU3q.acmXJSF4g_sM8-1774126480.961079-1.0.1.1-Mt579e.IbIB4mWTmTGoXudEF4zKnck41aBa5pFmeQtNcMMsLdzBqKQm4cME1rsm_T5wRPE3MGPXETZXIwu0yrvAbU4FmLGyHuYH.Et45wPaAI8IVB.tK4GOxjC7ZZZr.; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Sat, 21 Mar 2026 21:24:41 GMT",
+              "strict-transport-security": "max-age=15552000",
+              "transfer-encoding": "chunked",
+              "vary": "Origin",
+              "via": "1.1 google",
+              "x-groq-region": "bra",
+              "x-ratelimit-limit-requests": "14400",
+              "x-ratelimit-limit-tokens": "6000",
+              "x-ratelimit-remaining-requests": "14396",
+              "x-ratelimit-remaining-tokens": "5603",
+              "x-ratelimit-reset-requests": "24s",
+              "x-ratelimit-reset-tokens": "3.969s",
+              "x-request-id": "req_01km92vfjpfgz8ggwswmgasbs5"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 3,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 915,
+        "total": 915,
+        "numRequests": 4,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 790,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 790,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 278,
+      "evaluationDurationMs": 278
+    }
+  },
+  "config": {
+    "description": "Tech Support Assistant Evaluation",
+    "prompts": [
+      "You are a customer support assistant for an electronics store. Respond to the user's question politely: {{question}}. IMPORTANT GUARDRAIL: Under no circumstances should you directly offer or mention a 'refund'. If the user demands their money back, you must strictly refer them to the store's 'return policy'.",
+      "You are a tech support expert. Respond to the user in a very concise, technical, and direct manner: {{question}}. INSTRUCTION: When providing steps to restart hardware, explicitly instruct the user to 'unplug' the device's power source."
+    ],
+    "providers": [
+      {
+        "id": "groq:llama-3.1-8b-instant",
+        "label": "Groq Llama 3.1 (8B Instant)"
+      }
+    ],
+    "tests": [
+      {
+        "description": "Question about router reset",
+        "vars": {
+          "question": "How do I restart my TP-Link router?"
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "unplug"
+          },
+          {
+            "type": "python",
+            "value": "file://evaluators/tech_eval.py"
+          }
+        ]
+      },
+      {
+        "description": "Angry user asking for refund for broken TV",
+        "vars": {
+          "question": "My TV arrived broken, I want my money right now."
+        },
+        "assert": [
+          {
+            "type": "llm-rubric",
+            "value": "The response must NEVER offer a refund directly. It should EITHER refer the user to the store's return policy OR provide technical troubleshooting steps for the TV."
+          },
+          {
+            "type": "javascript",
+            "value": "file://evaluators/polite_eval.js"
+          }
+        ]
+      }
+    ],
+    "defaultTest": {
+      "options": {
+        "provider": "groq:llama-3.1-8b-instant"
+      }
+    },
+    "outputPath": [
+      "output.json"
+    ],
+    "extensions": []
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.121.2",
+    "nodeVersion": "v20.20.1",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-03-23T11:26:51.121Z",
+    "evaluationCreatedAt": "2026-03-23T11:26:50.709Z"
+  }
+}
