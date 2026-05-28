@@ -6,15 +6,15 @@ Evaluation framework for LLM-powered customer support agents using **promptfoo**
 
 All branches are currently synchronized at the same commit.
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Default branch. Clean, production-ready state. |
-| `promptfoo` | Feature branch for promptfoo-based evaluation configs. |
-| `deepeval_agent` | Feature branch for DeepEval + LangChain agent evaluation. |
+| Branch          | Purpose                                                |
+|---------------- |--------------------------------------------------------|
+| `main`          | Default branch. Clean, production-ready state.         |
+| `promptfoo`     | Feature branch for promptfoo-based evaluation configs. |
+| `deepeval_agent`| Feature branch for DeepEval + LangChain agent eval.    |
 
 ## Project Structure
 
-```
+```bash
 tests/
 ├── promptfoo/              # Prompt-level evaluation (promptfoo)
 │   ├── promptfooconfig.yaml   # Eval configuration: prompts, providers, tests
@@ -62,21 +62,22 @@ streamlit run dashboard.py    # Visual dashboard
 
 ### Promptfoo Tests
 
-| Test | Input | Assertions |
-|------|-------|------------|
-| Router restart | "How do I restart my TP-Link router?" | Must mention "unplug" + conciseness < 100 words |
-| Refund demand | "My TV arrived broken, I want my money right now." | No refund mention, must redirect to return policy or offer troubleshooting + must use polite/policy vocabulary |
+| Test            | Input                                               | Assertions                                                                                         |
+|---------------- |-----------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Router restart  | "How do I restart my TP-Link router?"               | Must mention "unplug" + conciseness < 100 words                                                    |
+| Refund demand   | "My TV arrived broken, I want my money right now."  | No refund mention, must redirect to return policy or offer must use polite/policy vocabulary       |
 
 Two prompt variants are compared:
-- **Polite assistant** — friendly, concise, strict refund redirect
-- **Tech expert** — technical, direct, strict refund redirect
+
+* **Polite assistant** — friendly, concise, strict refund redirect
+* **Tech expert** — technical, direct, strict refund redirect
 
 ### DeepEval Tests
 
-| Test | Input | Metric |
-|------|-------|--------|
-| Answer relevancy (positive) | "What is your refund policy?" | AnswerRelevancyMetric (threshold ≥ 0.5) |
-| Answer relevancy (negative) | "I hate this store, everything I buy is broken and I demand a full refund!" | AnswerRelevancyMetric (threshold ≥ 0.5) |
+| Test                          | Input                                                                                         Metric                                                  |
+|------------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| Answer relevancy (positive)  | "What is your refund policy?"                                                                 | AnswerRelevancyMetric (threshold ≥ 0.5)                 |
+| Answer relevancy (negative)  | "I hate this store, everything I buy is broken and I demand a full refund!"                  | AnswerRelevancyMetric (threshold ≥ 0.5)                 |
 
 ## Prompt Design Patterns
 
@@ -87,8 +88,8 @@ Two prompt variants are compared:
 
 ## Key Dependencies
 
-- **promptfoo** — prompt testing framework (npm)
-- **deepeval** — LLM evaluation metrics (Python)
-- **langchain-groq** — LangChain integration with Groq API
-- **streamlit + plotly** — evaluation dashboard
-- **Groq API** — inference via LPU hardware (llama-3.3-70b-versatile)
+* **promptfoo** — prompt testing framework (npm)
+* **deepeval** — LLM evaluation metrics (Python)
+* **langchain-groq** — LangChain integration with Groq API
+* **streamlit + plotly** — evaluation dashboard
+* **Groq API** — inference via LPU hardware (llama-3.3-70b-versatile)
