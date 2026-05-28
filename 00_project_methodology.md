@@ -46,7 +46,7 @@ Goal: define scope, initial risks, and quality strategy.
 
 1. Create a `project_bootstrap.md` — define objectives, stakeholders, target metrics
 2. Create a `risk_model_card.md` — identify initial project risks
-3. Review `ai_rules.md`, `qa_rules.md`, `data_rules.md` — align principles from day one
+3. Review `ai_rules.md`, `qa_rules.md`, `data_rules.md`, `execution_rules.md`, `tooling_rules.md`, `anti_patterns.md` — align principles from day one
 
 ### Skills to apply
 
@@ -143,7 +143,7 @@ Goal: monitor, operate, and respond to incidents in production.
 
 | Situation | What to use |
 | ----------- | ------------- |
-| Starting a new project | `templates/project_bootstrap.md`, `rules/qa_rules.md` |
+| Starting a new project | `templates/project_bootstrap.md`, `rules/qa_rules.md`, `rules/execution_rules.md`, `rules/tooling_rules.md` |
 | Defining KPIs | `kpi_governance.md` |
 | Defining data contracts | `data_contracts.md` |
 | Prioritizing tests by risk | `risk_prioritization_contracts.md`, `workflows/risk_based_testing.md` |
@@ -157,5 +157,5 @@ Goal: monitor, operate, and respond to incidents in production.
 | Designing human override | `human_override_protocol.md` |
 | Preparing rollback | `rollback_procedure.md` |
 | Security testing (any domain) | `red_team_suite.md` |
-| Defining AI rules | `rules/ai_rules.md`, `rules/data_rules.md` |
+| Defining AI rules | `rules/ai_rules.md`, `rules/data_rules.md`, `rules/tooling_rules.md` |
 | Defining team skills | `skills/` (choose by need) |
