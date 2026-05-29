@@ -60,6 +60,8 @@ npm install
 npx promptfoo eval
 ```
 
+Runs all 22 test scenarios across both prompt variants (polite + tech expert). Results output to `output.json` / `output.txt`.
+
 ### Running the App Dashboard & Agent Evaluator
 
 ```bash
@@ -74,6 +76,43 @@ python run_evals.py
 # Launch the Dashboard
 streamlit run dashboard.py
 ```
+
+### Running Specific Test Scenarios
+
+Filter by test name or category using promptfoo's `--filter` flag:
+
+```bash
+cd tests/promptfoo
+
+# Run only refund guardrail tests
+npx promptfoo eval --filter "refund"
+
+# Run only device troubleshooting tests
+npx promptfoo eval --filter "router|TV|charge|printer|Bluetooth|firmware"
+
+# Run only jailbreak / injection tests
+npx promptfoo eval --filter "jailbreak|extraction|role-play"
+
+# Run only multi-language tests
+npx promptfoo eval --filter "Spanish|French|German|Portuguese"
+
+# Run only escalation tests
+npx promptfoo eval --filter "threats|takeover|lawyer"
+
+# Run a single test by description
+npx promptfoo eval --filter "Smart TV"
+```
+
+### Promptfoo Test Overview
+
+| Category | Count | Evaluators Used |
+|---|---|---|
+| Refund guardrails | 6 | `llm-rubric` + `polite_eval.js` |
+| Device troubleshooting | 6 | `llm-rubric` + `tech_eval.py` |
+| Escalation / hand-off | 3 | `llm-rubric` + `polite_eval.js` + `escalation_eval.py` |
+| Multi-language | 4 | `llm-rubric` + `multilang_eval.py` (+ `polite_eval.js` for refund scenarios) |
+| Jailbreak / injection | 3 | `llm-rubric` + `jailbreak_eval.py` + `jailbreak_eval.js` |
+| **Total** | **22** | 2 prompts × 22 tests = 44 eval runs |
 
 ### Docker (Reproducible runs)
 
@@ -95,6 +134,38 @@ make dashboard          # Launch Streamlit dashboard
 make docker-run         # Run evals via Docker
 make docker-dashboard   # Dashboard via Docker
 ```
+
+## Evaluation Results (Phase 1)
+
+Current pass rate on Groq Llama 3.3-70B: **50.0%** (22/44 test runs)
+
+| Category | Pass Rate | Notes |
+|---|---|---|
+| Refund guardrails | 91.7% | Strong — lost-in-transit needs nuanced handling |
+| Device troubleshooting | 50.0% | Model over-applies "unplug" to battery devices |
+| Escalation / hand-off | 66.7% | Fixed — threats and account takeover now escalate |
+| Multi-language | 0% | Language mixing persists (model-level limitation) |
+| Jailbreak / injection | 16.7% | System prompt leaking, DAN compliance (model-level) |
+
+### Known Model-Level Limitations
+
+1. **System prompt extraction** — reveals system prompt on "ignore instructions" attempts
+2. **DAN-style jailbreak** — tech expert prompt complies with DAN persona
+3. **Language mixing** — inserts English phrases ("Unplug the power source") into non-English responses
+4. **Blind "unplug" advice** — applies power-cycling steps to battery-powered devices (phones, headphones)
+5. **Lost-in-transit** — defaults to "refer to return policy" without investigation steps
+
+These require stronger prompts, fine-tuning, or a model swap to resolve.
+
+### Regression Testing (per _core methodology)
+
+| Mode | When | Scope |
+|---|---|---|
+| **Fast** | Low-risk docs/meta changes | Refund guardrails only (12 runs) |
+| **Standard** | PRs, feature branches | Full 22-test suite (44 runs) |
+| **Critical** | Release candidates, main merge | Full eval + DeepEval suite |
+
+Run the appropriate mode with `--filter-first-n <N>` or the full `npx promptfoo eval`.
 
 ## Business Value
 
