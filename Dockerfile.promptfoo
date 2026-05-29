@@ -1,0 +1,11 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY tests/promptfoo/package.json tests/promptfoo/package-lock.json ./
+RUN npm ci
+
+COPY tests/promptfoo/ ./
+
+ENTRYPOINT ["npx", "promptfoo"]
+CMD ["eval"]

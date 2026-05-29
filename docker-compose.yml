@@ -1,0 +1,35 @@
+services:
+  promptfoo:
+    build:
+      context: .
+      dockerfile: Dockerfile.promptfoo
+    env_file:
+      - .env
+    volumes:
+      - ./tests/promptfoo:/app
+      - /app/node_modules
+    profiles:
+      - eval
+
+  deepeval:
+    build:
+      context: .
+      dockerfile: Dockerfile.deepeval
+    env_file:
+      - .env
+    volumes:
+      - ./tests/deepeval_agent:/app
+    profiles:
+      - eval
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.deepeval
+    env_file:
+      - .env
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "dashboard.py"]
+    profiles:
+      - dashboard
