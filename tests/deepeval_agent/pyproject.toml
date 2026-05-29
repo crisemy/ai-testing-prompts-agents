@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "deepeval-agent"
+version = "0.1.0"
+description = "DeepEval-based autonomous agent evaluation for AI customer support"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "jupyter>=1.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["."]

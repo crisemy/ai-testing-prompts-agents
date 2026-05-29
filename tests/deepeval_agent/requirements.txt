@@ -1,8 +1,9 @@
-deepeval
-langchain
-langchain-groq
-pytest
-pandas
-jupyter
-streamlit
-plotly
+deepeval==1.6.8
+langchain==0.3.23
+langchain-groq==0.2.6
+pytest==8.3.5
+pandas==2.2.3
+jupyter==1.1.1
+streamlit==1.43.2
+plotly==6.0.1
+python-dotenv==1.1.0

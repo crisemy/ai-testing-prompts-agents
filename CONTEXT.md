@@ -36,6 +36,15 @@ tests/
 
 ## How to Run
 
+### Quick Setup (Root)
+
+```powershell
+# One-shot bootstrap (copies .env.example → .env, installs deps)
+./setup.ps1
+```
+
+Or step by step:
+
 ### Promptfoo (tests/promptfoo/)
 
 ```powershell
@@ -56,6 +65,27 @@ $env:GROQ_API_KEY="your_key"
 pytest test_agent.py -v      # Run test suite
 python run_evals.py           # Bulk eval → eval_results.csv
 streamlit run dashboard.py    # Visual dashboard
+```
+
+### Docker (Reproducible runs)
+
+```powershell
+# Run both eval suites in isolated containers
+docker compose --profile eval up --build
+
+# Launch dashboard
+docker compose --profile dashboard up --build
+```
+
+### Makefile (Cross-platform task runner)
+
+```powershell
+make setup              # Bootstrap everything
+make eval-promptfoo     # Run promptfoo suite
+make eval-deepeval      # Run DeepEval suite
+make dashboard          # Launch Streamlit dashboard
+make docker-run         # Run evals via Docker
+make docker-dashboard   # Dashboard via Docker
 ```
 
 ## Evaluation Tests

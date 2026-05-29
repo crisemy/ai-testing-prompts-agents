@@ -45,6 +45,13 @@ Say goodbye to expensive Enterprise cloud subscriptions! The framework incorpora
 * Python 3.12+
 * A Groq API Key (or OpenAI key explicitly configured).
 
+### Quick Setup (Root)
+
+```bash
+# One-shot bootstrap (copies .env.example → .env, installs deps)
+./setup.ps1
+```
+
 ### Running Promptfoo
 
 ```bash
@@ -66,6 +73,27 @@ python run_evals.py
 
 # Launch the Dashboard
 streamlit run dashboard.py
+```
+
+### Docker (Reproducible runs)
+
+```bash
+# Run both eval suites in isolated containers
+docker compose --profile eval up --build
+
+# Launch dashboard
+docker compose --profile dashboard up --build
+```
+
+### Makefile (Cross-platform task runner)
+
+```bash
+make setup              # Bootstrap everything
+make eval-promptfoo     # Run promptfoo suite
+make eval-deepeval      # Run DeepEval suite
+make dashboard          # Launch Streamlit dashboard
+make docker-run         # Run evals via Docker
+make docker-dashboard   # Dashboard via Docker
 ```
 
 ## Business Value

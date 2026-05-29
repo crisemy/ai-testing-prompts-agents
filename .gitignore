@@ -5,9 +5,13 @@ venv/
 __pycache__/
 *.pyc
 
+# Generated eval output
+eval_results.csv
+tests/deepeval_agent/eval_results.csv
+tests/promptfoo/output.json
+tests/promptfoo/output.txt
+
 # Personal files
 PLAN.md
-01_fundamentals/
-02_operations/
-03_personal_tooling/
+_core/
 SUMMARY.md
